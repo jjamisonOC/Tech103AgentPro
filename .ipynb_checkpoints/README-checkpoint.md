@@ -4,7 +4,7 @@ AgentPro is a flexible framework for building AI agents with multiple specialize
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8%2B-blue" alt="Python 3.8+">
-  <img src="https://img.shields.io/badge/License-MIT-green" alt="License: MIT">
+  <img src="https://img.shields.io/badge/License-Apache%202.0-blue" alt="License: Apache 2.0">
 </p>
 
 ## Features
@@ -23,8 +23,8 @@ AgentPro is a flexible framework for building AI agents with multiple specialize
 Clone the repository and install the required packages:
 
 ```bash
-git clone https://github.com/yourusername/agentpro.git
-cd agentpro
+git clone https://github.com/traversaal-ai/AgentPro.git
+cd AgentPro
 pip install -r requirements.txt
 ```
 
@@ -36,6 +36,12 @@ Create a `.env` file in the root directory with your API keys:
 OPENAI_API_KEY=your_openai_api_key
 TRAVERSAAL_ARES_API_KEY=your_traversaal_ares_api_key
 ```
+Ares internet tool: Searches the internet for real-time information using the Traversaal Ares API. To get `TRAVERSAAL_ARES_API_KEY`. Follow these steps:
+
+1. Go to the [Traversaal API platform](https://api.traversaal.ai/)
+2. Log in or create an account
+3. Click **"Create new secret key"**
+4. Copy the generated key and paste in `.env` file :
 
 ### Running the Agent
 
@@ -47,38 +53,71 @@ python main.py
 
 This starts an interactive session with the agent where you can enter queries.
 
-## Usage Examples
-
 ### Basic Usage
 
 ```python
-from agentpro import AgentPro
-from agentpro.tools import AresInternetTool, CodeEngine, YouTubeSearchTool, SlideGenerationTool
-
-# Initialize tools
-ares_tool = AresInternetTool()
-code_tool = CodeEngine()
-youtube_tool = YouTubeSearchTool()
-slide_tool = SlideGenerationTool()
-
-# Create agent with tools
-agent = AgentPro(tools=[ares_tool, code_tool, youtube_tool, slide_tool])
+from agentpro import AgentPro, ares_tool, code_tool, youtube_tool
+agent = AgentPro(tools=[ares_tool, code_tool, youtube_tool])
 
 # Run a query
-response = agent("Generate a presentation on the latest AI advancements")
+response = agent("Generate a summary on the latest AI advancements")
 print(response)
 ```
+You can also use the [Quick Start](https://github.com/traversaal-ai/AgentPro/blob/main/agentpro/examples/Quick_Start.ipynb) Jupyter Notebook to run AgentPro directly in Colab.
 
-### Example Queries
+## 🌍 Traversaal x Optimized AI Hackathon 2025
 
-The agent can handle a variety of tasks:
+We’re teaming up with the **Optimized AI Conference 2025** to host a **global hackathon on AI Agents** — open to all developers, builders, researchers, and dreamers working on intelligent systems.
+
+### The Challenge
+
+**Build a real, functional AI Agent** that solves a real-world problem.
+
+This isn’t about flashy demos. We want to see domain-specific, usable, vertical agents — like:
+- 🧑‍💼 Customer Support Agents
+- 🔬 Research Assistants
+- 📊 Data Analyst Agents
+- 💡 Or something totally original
+
+You can use any framework, but we recommend trying **[AgentPro](https://github.com/Traversaal/AgentPro)** — our open-source toolkit designed for rapid prototyping and robust architecture.
+
+### Key Dates
+
+- **Hackathon Starts:** April 9, 2025  
+- **Submission Deadline:** April 15, 2025  
+- **Winners Announced:** April 15, 2025 (Live @ Optimized AI Conference)
+
+### Prizes + Recognition
+
+| Prize Tier         | Reward     |
+|--------------------|------------|
+| 🥇 Grand Prize      | $1,000     |
+| 🥈 Runner-Up        | $500     |
+| 🥉 Honorable Mention x2 | $250       |
+
+Plus:
+- 1:1 **Mentorship opportunities**
+- Invitation to **Traversaal’s AI Fellowship Program**
+
+### Want to be a Judge?
+We’re looking for global experts in AI, product, UX, and enterprise applications to help evaluate the submissions. 👉 [Apply to be a Judge](https://forms.gle/zpC4GbEjAkD1osY68)
+
+For more details, follow this [link](https://hackathon.traversaal.ai/)
+
+📩 Questions? Reach us at [hackathon-oai@traversaal.ai](hackathon-oai@traversaal.ai)
+
+
+## Data Science Agent
+https://github.com/user-attachments/assets/aeeb91e4-134e-4a14-bbc4-2523ba236c56
+
+
+## Tools Overview
+The AgentPro toolkit comes with a variety of default tasks, such as:
 
 - **Internet Research**: "What are the latest developments in quantum computing?"
 - **Code Generation**: "Create a Python script to analyze stock prices and generate a chart"
 - **YouTube Analysis**: "Find and summarize recent videos about machine learning"
 - **Presentation Creation**: "Make a presentation about renewable energy sources"
-
-## Tools Overview
 
 ### AresInternetTool
 
@@ -177,7 +216,7 @@ agentpro/
 │   │   ├── ares_tool.py      # Internet search
 │   │   ├── code_tool.py      # Code generation
 │   │   ├── youtube_tool.py   # YouTube analysis
-│   │   └── slide_tool.py     # Presentation generation
+│   │   └── slide_tool.py     # Presentation generation (**Work in progress**)
 │   └── examples/
 │       ├── __init__.py
 │       └── example_usage.py  # Usage examples
@@ -194,4 +233,4 @@ agentpro/
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the Apache 2.0 License - see the LICENSE file for more details.
