@@ -1,0 +1,13 @@
+openai
+youtube_transcript_api
+duckduckgo-search
+requests
+python-pptx
+pydantic
+python-dotenv
+pandas
+numpy
+matplotlib
+seaborn
+openpyxl  # For Excel file support
+pyarrow    # For parquet file support
